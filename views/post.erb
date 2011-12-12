@@ -1,0 +1,36 @@
+<div id="title">
+	<h2><%= @post[:title] %></h2>
+	<p class="post-by">by <%= userlink(@post[:owneruserid]) %></p>
+</div>
+
+<div id="body">
+  <div id="mainscore"><%= @post[:score] or 0 %></div>
+  <%= @post[:body] %>
+  <p class="post-footer align-left">
+  <span class="date"><%= @post[:creationdate] %></span>
+  </p>
+</div>
+
+<div id="comments">
+  <h1>Comments</h1>
+  <% @comments.each do |comment| %>
+  <div classs="comment">
+    <div class="score"><%= comment[:score] or 0 %></div>
+    <div class="text"><%= comment[:text] %></div>
+    <div class="user"><%= userlink(comment[:userid]) %></div>
+    <div class="creationdate"><%= comment[:creationdate] %></div>
+  </div>
+  <% end %>
+</div>
+
+<div id="answers">
+  <h1>Answers</h1>
+  <% @answers.each do |answer| %>
+  <div classs="answer"<%= 'class="accepted"' if answer[:id] == @accepted %>>
+    <div class="score"><%= answer[:score] or 0 %></div>
+    <div class="body"><%= answer[:body] %></div>
+    <div class="user"><%= userlink(answer[:owneruserid]) %></div>
+    <div class="creationdate"><%= answer[:creationdate] %></div>
+  </div>
+<% end %>
+</div>"

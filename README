@@ -1,0 +1,62 @@
+Stack Exchange Read-Only Mirror Indexer and Server
+--------------------------------------------------
+
+This is a project to index and serve a read-only mirror
+of the quarterly Stack Exchange Creative Commons dump.
+
+
+Instructions
+------------
+
+1) Download the Stack Exchange dump from:
+
+http://blog.stackoverflow.com/2009/06/stack-overflow-creative-commons-data-dump/
+
+2) cd into that directory
+
+3) Run index.py -- it will probably take several hours, especially for Stack Overflow
+
+4) Move, copy, or link the *.sqlite3 databases you want to server into the directory
+   holding the files in this package.
+
+5) Run server.rb (or set it up through rack on your server) to serve the files.
+
+
+Requirements
+------------
+* Python >= 2.6, < 3.0
+* Ruby >= 1.8
+* rubygems
+* rack
+
+
+,TODO
+----
+* Have performance not suck on Stack Overflow
+* Better searching
+* Tag cloud
+* Use MySQL / postgres for the database for Stack Overflow?
+* Put CC / licensing notices on the pages
+
+
+Authors
+-------
+Christopher Swenson (cswenson@google.com)
+
+
+Copyright and Licensing
+-----------------------
+
+Copyright (c) 2011 Google, Inc. All rights reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.

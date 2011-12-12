@@ -1,0 +1,16 @@
+<div id="index">
+<h1>Stack Exchange Mirror</h1>
+
+<p>
+	Welcome to your local Stack Exchange Mirror.  We have the following sites available:
+</p>
+
+<div id="sitelist">
+<ul>
+<% @names.each do |name| %>
+  <li><a href="/<%= name %>/"><%= name %></a></li>
+<% end %>
+</ul>
+</div>
+
+</div>

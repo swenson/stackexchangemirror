@@ -1,0 +1,4 @@
+<div id="user">
+<% @user_keys.each do |k| %>
+  <div id="<%= k %>"><strong><%= k %></strong><%= @user[k] %></div>
+<% end %>

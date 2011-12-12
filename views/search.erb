@@ -1,0 +1,15 @@
+<div id="title">
+	<h2>Search results for "<%= @query %>"</h2>
+</div>
+
+<div id="body">
+  <% @posts.each do |post| %>
+  <div class="score"><a href="<%= postlink(post[:id]) %>"><%= post[:score] %></a></div>
+  <div class="posttitle"><a href="<%= postlink(post[:id]) %>"><%= post[:title] %></a></div>
+  <div class="snippet"><%= post[:body][0,100]%></div>
+  <p class="post-by">by <%= userlink(post[:owneruserid]) %></p>
+  <p class="post-footer align-left">
+  <span class="date"><%= post[:creationdate] %></span>
+  </p>
+  <% end %>
+</div>
