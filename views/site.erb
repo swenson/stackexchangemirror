@@ -1,3 +1,12 @@
-<div id="tagcloud">
+<div id="body">
 
+<div id="random_article_of_the_day">
+  <h2>Random article of the day:</h2>
+  <div class="score"><a href="<%= postlink(@random[:id]) %>"><%= @random[:score] %></a></div>
+  <div class="posttitle"><a href="<%= postlink(@random[:id]) %>"><%= @random[:title] %></a></div>
+  <div class="snippet"><%= make_snippet(@random) %></div>
+  <p class="post-by">by <%= userlink(@random[:owneruserid]) %></p>
+  <p class="post-footer align-left">
+  <span class="date"><%= @random[:creationdate] %></span>
+</div>
 </div>
